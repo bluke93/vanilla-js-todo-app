@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;600&display=swap');
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #4158D0;
+  background-image: linear-gradient(90deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.2);
+  width: 675px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.card .head {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card .head .title {
+  text-align: center;
+}
+
+.card .content {
+  padding-bottom: 20px;
+}
+
+.form-field {
+  width: 60%;
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.form-btn {
+  padding: 10px;
+  margin: 10px 5px;
+  min-width: 80px;
+  color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.form-btn:hover {
+  color: #ffffff;
+  border: 1px solid #1c1c1c;
+  background-color: #1c1c1c;
+  cursor: pointer;
+}

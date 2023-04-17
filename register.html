@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do App</title>
+  <link href="./css/main.css" rel="stylesheet">
+  <link href="./css/navbar.css" rel="stylesheet">
+  <link href="./css/register.css" rel="stylesheet">
+  <script src="./js/store.js"></script>
+  <script src="./js/general.js"></script>
+  <script src="./js/routes.js"></script>
+  <script src="./js/register.js"></script>
+</head>
+<body>
+  <nav id="nav_guest" class="navbar">
+    <div class="btn btn-primary" onclick="Router.navigateTo('login');">Login</div>
+    <div class="btn btn-primary" onclick="Router.navigateTo('home');">Homepage</div>
+  </nav>
+  <nav id="nav_logged" class="navbar">
+    <div>Benvenuto, <span id="loggedUser">NomeUtente</span></div>
+    <div class="btn btn-primary">Aggiungi</div>
+    <div class="btn btn-primary" onclick="App.auth.logout()">Logout</div>
+  </nav>
+
+  <section class="container">
+    <div class="card">
+      <div class="head">
+        <h1 class="title">Register</h1>
+      </div>
+      <div class="content">
+        <input id="email" class="form-field" type="text" placeholder="email*">
+        <input id="full_name" class="form-field" type="text" placeholder="full name*">
+        <input id="password" class="form-field" type="password" placeholder="password*">
+        <div class="form-btn" onclick="register()">Register</div>
+        <p>All fields marked with * are mandatory.</p>
+      </div>
+    </div>
+  </section>
+ 
+</body>
+</html>
