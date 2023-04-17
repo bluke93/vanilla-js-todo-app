@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <title>To Do App</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="./css/main.css" rel="stylesheet">
@@ -12,17 +13,17 @@
   <script src="./js/main.js"></script>
 </head>
 <body>
-  <nav id="nav_guest" class="navbar">
+  <nav id="nav_guest" class="navbar animate__animated animate__fadeIn">
     <div class="btn btn-primary" onclick="Router.navigateTo('login');">Login</div>
     <div class="btn btn-primary" onclick="Router.navigateTo('register');">Register</div>
   </nav>
-  <nav id="nav_logged" class="navbar">
+  <nav id="nav_logged" class="navbar animate__animated animate__fadeIn">
     <div>Benvenuto, <span id="loggedUser">NomeUtente</span></div>
     <div class="btn btn-primary" onclick="showAddForm()">Aggiungi</div>
     <div class="btn btn-primary" onclick="logout()">Logout</div>
   </nav>
 
-  <section class="container">
+  <section class="container animate__animated animate__fadeInUp animate__faster">
     <div class="card">
       <div class="head">
         <h1 class="title">To Do App</h1>
