@@ -39,8 +39,8 @@ var db = {
     {
       id: 2,
       user_id: 1,
-      title: "Task di iroluke",
-      description: "testo di descrizione a caso. non completo njfb kf hekfb e hfjfhdkjfhkfjh ekhkd hldhf fejfkdjjf dkj <br> iuhfkdfh dlkjfhljfhkjh",
+      title: "Task diverso",
+      description: "tj <br> iuhfkdfh dlkjfhljfhkjh",
       date: "19/09/1993",
       checked: false,
     },
@@ -59,11 +59,41 @@ const App = {
   tasks: {
     // To add a task
     add: function(data){
+      const task = {
+        id: db.indexes.tasks + 1,
+        title: data.title,
+        description: data.description,
+        checked: false,
+        date: new Date(Date.now()),
+        user_id: App.auth.loggedUser().id
+      }
+      db.tasks.push(task);
+      db.indexes.tasks++;
+      App.store.save(db);
+      return true;
     },
     edit: function(id, data){
+      const index = db.tasks.findIndex(task => task.id == id);
+      if(index != -1){
+        db.tasks[index] = Object.assign({}, {...db.tasks[index], ...data, });
+        App.store.save(db);
+        return true;
+      } else {
+        console.log("task not found");
+        return false;
+      }
     },
     // To delete a task
     remove: function(id){
+      const index = db.tasks.findIndex(task => task.id == id);
+      if(index != -1){
+        db.tasks.splice(index, 1);
+        App.store.save(db);
+        return true;
+      } else {
+        console.log("task not found");
+        return false;
+      }
     },
     // retrieve all user's tasks
     getByUser: function(userId){
@@ -76,7 +106,6 @@ const App = {
   users: {
     // to register a user
     add: function(email, password, full_name = "Default"){
-      db = JSON.parse(localStorage.getItem('app_database'));
       const exists = db.users.find(user => user.email == email);
       if(!exists){
         const user = {

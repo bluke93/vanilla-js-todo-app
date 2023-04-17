@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>To Do App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="./css/main.css" rel="stylesheet">
   <link href="./css/navbar.css" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
@@ -17,84 +18,59 @@
   </nav>
   <nav id="nav_logged" class="navbar">
     <div>Benvenuto, <span id="loggedUser">NomeUtente</span></div>
-    <div class="btn btn-primary">Aggiungi</div>
+    <div class="btn btn-primary" onclick="showAddForm()">Aggiungi</div>
     <div class="btn btn-primary" onclick="logout()">Logout</div>
   </nav>
 
   <section class="container">
     <div class="card">
       <div class="head">
-        <h1 class="title">To Do list...</h1>
+        <h1 class="title">To Do App</h1>
         <input id="inputFilter" class="form-field" type="text" placeholder="Filtra task...">
       </div>
       <div id="task-list" class="content">
 
 
-        <div id="task_id" class="task-item">
+        <div id="task_id" class="task-item animate__animated animate__fadeInLeft">
           <div class="check">
-            <input class="input-check" type="checkbox">
+            <input class="input-check animate__animated animate__bounceIn" type="checkbox">
           </div>
           <div class="content">
-            <div class="title">Titolo task</div>
+            <div class="title">Benvenuto!</div>
             <div class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Se vuoi creare una To-Do list, non ti basta fare altro che <a href="./login.html">accedere</a> o <a href="./register.html">creare un account</a>!
             </div>
             <div class="info">
               Created on <span class="date">29 September 2000</span>
             </div>
           </div>
           <div class="actions">
-            x
+            <div class="delete">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4h-3.5z" />
+              </svg>
+            </div>
           </div>
         </div>
-
-        <div id="task_id" class="task-item">
-          <div class="check">
-            <input type="checkbox">
-          </div>
-          <div class="content">
-            <div class="title">Titolo task</div>
-            <div class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </div>
-            <div class="info">
-              Created on <span class="date">29 September 2000</span>
-            </div>
-          </div>
-          <div class="actions">
-            x
-          </div>
-        </div>
-
-        <div id="task_id" class="task-item">
-          <div class="check">
-            <input type="checkbox">
-          </div>
-          <div class="content">
-            <div class="title">Titolo task</div>
-            <div class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </div>
-            <div class="info">
-              Created on <span class="date">29 September 2000</span>
-            </div>
-          </div>
-          <div class="actions">
-            x
-          </div>
-        </div>
-
 
       </div>
     </div>
   </section>
+  <div class="overlay_bg">
+    <div class="card">
+      <div class="head">
+        <h1 class="title">Add task</h1>
+      </div>
+      <div class="content">
+        <div class="form">
+          <input type="text" placeholder="title*" id="add_task_title" class="form-field">
+          <textarea type="text" id="add_task_description" placeholder="descripion*" class="form-field"></textarea>
+          <div class="form-btn" onclick="createTask()">Aggiungi</div>
+          <p>All fields marked with * are mandatory</p>
+        </div>
+      </div>
+    </div>
+  </div>
  
 </body>
 </html>

@@ -16,3 +16,4 @@ function setupNavbar(){
 function logout(){
   App.auth.logout();
 }
+
